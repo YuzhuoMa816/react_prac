@@ -12,9 +12,10 @@ function ImageSlider({ url, limit = 5 }) {
   }
 
   function handleNextClick() {
-    setCurrentSlide(
-      currentSlide === imageList.length - 1 ? 0 : currentSlide + 1
-    );
+    setCurrentSlide((prev) => (prev === imageList.length - 1 ? 0 : prev + 1));
+    // setCurrentSlide(
+    //   currentSlide === imageList.length - 1 ? 0 : currentSlide + 1
+    // );
   }
 
   async function fetchImage(imageUrl) {
@@ -23,7 +24,7 @@ function ImageSlider({ url, limit = 5 }) {
       setErrorMsg(null);
       setImageList([]);
 
-      const response = await fetch(`${imageUrl}?page=2&limit=${limit}`);
+      const response = await fetch(`${imageUrl}?page=1&limit=${limit}`);
       const data = await response.json();
       if (data) {
         setImageList(data);
@@ -82,11 +83,9 @@ function ImageSlider({ url, limit = 5 }) {
           ? imageList.map((_, index) => (
               <button
                 key={index}
-                className={
-                  currentSlide === index
-                    ? "current-indicator"
-                    : "hide-current-indicator"
-                }
+                className={`current-indicator ${
+                  index === currentSlide ? "" : "hide-current-indicator"
+                }`}
               ></button>
             ))
           : null}

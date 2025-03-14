@@ -16,7 +16,7 @@ function App() {
 {/* star rate  */}
       {/* <StartRate noOfStars={10}/> */}
 
-    <ImageSlider url={"https://picsum.photos/v2/list"} limit={6}/>
+    <ImageSlider url={"https://picsum.photos/v2/list"} limit={10}/>
 
     </div>
   );
