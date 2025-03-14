@@ -1,0 +1,80 @@
+:root {
+    --primary-color: #ff0000;
+    --secondary-color: gray;
+    --shadow-color: #555;
+    --arrow-size: 2rem;
+    --indicator-size: 15px;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.current-image {
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 7px var(--shadow-color);
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hide-current-image {
+    display: none;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    color: white;
+    filter: drop-shadow(0px 0px 7px var(--shadow-color));
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.arrow:hover {
+    opacity: 0.8;
+}
+
+.right-arrow {
+    right: 1rem;
+}
+
+.left-arrow {
+    left: 1rem;
+}
+
+.circle-indicator {
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    gap: 0.3rem;
+}
+
+.current-indicator {
+    background-color: var(--primary-color);
+    height: var(--indicator-size);
+    width: var(--indicator-size);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.current-indicator:hover {
+    background-color: darkred;
+}
+
+.hide-current-indicator {
+    background-color: var(--secondary-color);
+}
