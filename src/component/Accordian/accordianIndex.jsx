@@ -21,10 +21,6 @@ function Accordian() {
     }
 
     setSelectedList(tempAccordList);
-
-    // console.log("AccordList: " + tempAccordList);
-
-    // console.log("AccordList: " + selectedList);
   }
 
   return (
@@ -41,7 +37,7 @@ function Accordian() {
       <div className="accordian">
         {data && data.length > 0 ? (
           data.map((dataItem) => (
-            <div className="item">
+            <div className="item" key={dataItem.id}>
               <div
                 onClick={
                   enableMultiSelection
