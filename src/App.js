@@ -4,6 +4,8 @@ import ImageSlider from './component/ImageSlider';
 import RandomColor from './component/RandomColor';
 import StartRate from './component/StarRate';
 import LoadMoreData from './component/LoadMoreData';
+import SideMenu from './component/SideMenu';
+import menus from './component/SideMenu/data';
 function App() {
   return (
     <div className="App">
@@ -20,7 +22,9 @@ function App() {
     {/* <ImageSlider url={"https://picsum.photos/v2/list"} limit={10}/> */}
 
 
-<LoadMoreData/>
+{/* <LoadMoreData/> */}
+
+<SideMenu menuList={menus}/>
     </div>
   );
 }
