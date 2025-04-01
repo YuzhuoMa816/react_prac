@@ -2,8 +2,15 @@ import { useState, useEffect } from "react";
 import "./accordianStyle.css";
 import data from "./accordianData";
 function Accordian() {
+  const enableMultipleSelectedWord = "Enable Multiple Selection";
+  const enableSingleSelectedWord = "Enable Single Selection";
+
   const [selected, setSelected] = useState(null);
   const [enableMultiSelection, setEnableMultiSelection] = useState(false);
+
+  const [multiselectWords, setMultiselectWords] = useState(
+    enableMultipleSelectedWord
+  );
 
   const [selectedList, setSelectedList] = useState([]);
 
@@ -23,17 +30,23 @@ function Accordian() {
     setSelectedList(tempAccordList);
   }
 
+  function MultipleSelectClick() {
+    setEnableMultiSelection((prev) => {
+      if (prev) {
+        setMultiselectWords(enableMultipleSelectedWord);
+      } else {
+        setMultiselectWords(enableSingleSelectedWord);
+      }
+      return !prev;
+    });
+
+    setSelectedList([]);
+    setSelected(null);
+  }
+
   return (
     <div className="wrapper">
-      <button
-        onClick={() => {
-          setEnableMultiSelection(!enableMultiSelection);
-          setSelected(null);
-          setSelectedList([]);
-        }}
-      >
-        Enable multiple selection
-      </button>
+      <button onClick={MultipleSelectClick}>{multiselectWords}</button>
       <div className="accordian">
         {data && data.length > 0 ? (
           data.map((dataItem) => (
@@ -46,7 +59,7 @@ function Accordian() {
                 }
                 className="title"
               >
-                <h3>dataItem.question</h3>
+                <h3>{dataItem.question}</h3>
                 <span>+</span>
               </div>
               {enableMultiSelection ? (

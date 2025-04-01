@@ -11,7 +11,9 @@ function App() {
     <div className="App">
 
 
-      {/* <Accordian/> */}
+      <Accordian/>
+
+      {/* <PracAccordian /> */}
 
 
       {/* <RandomColor/> */}
@@ -24,7 +26,7 @@ function App() {
 
 {/* <LoadMoreData/> */}
 
-<SideMenu menuList={menus}/>
+{/* <SideMenu menuList={menus}/> */}
     </div>
   );
 }
