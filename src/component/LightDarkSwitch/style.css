@@ -1,0 +1,53 @@
+:root {
+    --background: white;
+    --text-primary: #000;
+    --button-bg: #000;
+    --button-text: white;
+    --transition-time: 0.3s;
+  }
+  
+  [data-theme="dark"] {
+    --background: #121212; 
+    --text-primary: white;
+    --button-bg: #fff;
+    --button-text: #000;
+  }
+  
+  .light-dark-switch {
+    background-color: var(--background);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    font-size: 18px;
+    transition: all var(--transition-time) ease;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .light-dark-switch p {
+    color: var(--text-primary);
+    font-size: 24px;
+    margin-bottom: 20px; 
+  }
+  
+  .light-dark-switch button {
+    background-color: var(--button-bg);
+    border: 2px solid var(--button-bg);
+    color: var(--button-text);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    width: 200px; 
+    transition: background-color var(--transition-time), color var(--transition-time);
+  }
+  
+  .light-dark-switch button:hover {
+    background-color: var(--button-text);
+    color: var(--button-bg);
+    border-color: var(--button-text);
+  }

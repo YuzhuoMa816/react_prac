@@ -6,12 +6,14 @@ import StartRate from './component/StarRate';
 import LoadMoreData from './component/LoadMoreData';
 import SideMenu from './component/SideMenu';
 import menus from './component/SideMenu/data';
+import QRCodeGenerator from './component/QRGenerate'
+import LightDarkSwitch from './component/LightDarkSwitch'
 function App() {
   return (
     <div className="App">
 
 
-      <Accordian/>
+      {/* <Accordian/> */}
 
       {/* <PracAccordian /> */}
 
@@ -27,7 +29,12 @@ function App() {
 {/* <LoadMoreData/> */}
 
 {/* <SideMenu menuList={menus}/> */}
-    </div>
+{/* <QRCodeGenerator/> */}
+
+
+<LightDarkSwitch/>   
+
+ </div>
   );
 }
 
