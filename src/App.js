@@ -8,8 +8,9 @@ import SideMenu from "./component/SideMenu";
 import menus from "./component/SideMenu/data";
 import QRCodeGenerator from "./component/QRGenerate";
 import LightDarkSwitch from "./component/LightDarkSwitch";
-
+import ModalTest from "./component/custommodal/ModalTest";
 import ScrollIndicatior from "./component/ScrollIndicator";
+import GithubProfileSearch from "./component/GithubProfileFinder";
 function App() {
   return (
     <div className="App">
@@ -31,7 +32,11 @@ function App() {
 
       {/* <LightDarkSwitch/>   */}
 
-      <ScrollIndicatior url={"https://dummyjson.com/products?limit=100"} />
+      {/* <ScrollIndicatior url={"https://dummyjson.com/products?limit=100"} /> */}
+
+      {/* <ModalTest /> */}
+
+      <GithubProfileSearch />
     </div>
   );
 }
