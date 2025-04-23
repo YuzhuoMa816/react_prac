@@ -11,6 +11,8 @@ import LightDarkSwitch from "./component/LightDarkSwitch";
 import ModalTest from "./component/custommodal/ModalTest";
 import ScrollIndicatior from "./component/ScrollIndicator";
 import GithubProfileSearch from "./component/GithubProfileFinder";
+
+import Tictactoe from "./component/tictactoe";
 function App() {
   return (
     <div className="App">
@@ -36,7 +38,9 @@ function App() {
 
       {/* <ModalTest /> */}
 
-      <GithubProfileSearch />
+      {/* <GithubProfileSearch /> */}
+
+      <Tictactoe />
     </div>
   );
 }
